@@ -1,0 +1,19 @@
+@import "header.less";
+
+.grid {
+  &:extend(.clearfix all);
+  padding-right: @grid-padding;
+  padding-left: @grid-padding;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  width: 100%;
+}
+
+.loop-grid-column(@grid-columns, sm, @grid-columns);
+
+.loop-grid-column(@grid-columns, md, @grid-columns);
+
+.loop-grid-column(@grid-columns, lg, @grid-columns);

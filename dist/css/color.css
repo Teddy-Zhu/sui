@@ -1,0 +1,32 @@
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.teal {
+  color: teal;
+}
+.blue {
+  color: blue;
+}
+.white {
+  color: white;
+}
+.black {
+  color: black;
+}
+.bg-teal {
+  background-color: teal;
+}
+.bg-blue {
+  background-color: blue;
+}
+.bg-white {
+  background-color: white;
+}
+.bg-black {
+  background-color: black;
+}

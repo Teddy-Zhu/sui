@@ -1,0 +1,16 @@
+.make-color(@colors,@index,@type:'',@attribute:color) when (@index > 0) {
+  @color: e(extract(@colors, @index));
+  @prefix: e(@type);
+  .@{prefix}@{color} {
+      @{attribute}: @color;
+  }
+  .make-color(@colors, @index - 1, @type, @attribute)
+}
+
+.color(@colors) {
+  .make-color(@colors, length(@colors));
+}
+
+.bg-color(@colors) {
+  .make-color(@colors, length(@colors), bg-, background-color);
+}
