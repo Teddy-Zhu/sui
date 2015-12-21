@@ -2,7 +2,7 @@
   @color: e(extract(@colors, @index));
   @prefix: e(@type);
   .@{prefix}@{color} {
-      @{attribute}: @color;
+      @{attribute}: @@color;
   }
   .make-color(@colors, @index - 1, @type, @attribute)
 }

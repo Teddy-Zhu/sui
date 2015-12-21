@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
-    exclude = ['reset', 'variables', 'header', 'util'],//不包含编译的文件
+    exclude = ['reset', 'variables', 'header', 'util', 'normalize'],//不包含编译的文件
     config = {
         /* Minified CSS Concat */
         minify: {
