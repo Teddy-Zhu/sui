@@ -1,0 +1,26 @@
+@import "extra/header.less";
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 @commonMargin 0 0;
+  padding: @font-level-11 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  .shadow(1);
+}
+
+.btn:hover {
+  .shadow(2);
+}
+
+.btn.tiny {
+  font-size: inherit;
+}

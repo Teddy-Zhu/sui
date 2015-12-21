@@ -1,3 +1,38 @@
+@font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, "Times New Roman", Times, serif;
+@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base: @font-family-sans-serif;
+
+@font-size-base: 14px;
+@font-size-large: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small: ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1: floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2: floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3: ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5: @font-size-base;
+@font-size-h6: ceil((@font-size-base * 0.85)); // ~12px
+
+@font-level-1: unit((1 / @font-size-base), em);
+@font-level-2: unit((2 / @font-size-base), em);
+@font-level-3: unit((3 / @font-size-base), em);
+@font-level-4: unit((4 / @font-size-base), em);
+@font-level-5: unit((5 / @font-size-base), em);
+@font-level-6: unit((6 / @font-size-base), em);
+@font-level-7: unit((7 / @font-size-base), em);
+@font-level-8: unit((8 / @font-size-base), em);
+@font-level-9: unit((9 / @font-size-base), em);
+@font-level-10: unit((10 / @font-size-base), em);
+@font-level-11: unit((11 / @font-size-base), em);
+@font-level-12: unit((12 / @font-size-base), em);
+@font-level-13: unit((13 / @font-size-base), em);
+@font-level-14: unit((14 / @font-size-base), em);
+
+@line-height-base: 1.428571429; // 20/14
+@line-height-computed: floor((@font-size-base * @line-height-base)); // ~20px
+
+@commonMargin: 0.25em;
 //media divided
 // small , middle , large
 @screen-sm: 768px;
@@ -14,11 +49,6 @@
 //Grid Variables
 @grid-columns: 24;
 @grid-padding: 12px;
-
-//shadow
-@shadow-1-step: 3;
-@shadow-2-step: 3;
-@shadow-depth: 6;
 
 //color define;
 @import "color.less";
