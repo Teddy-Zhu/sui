@@ -384,87 +384,45 @@ td,
 th {
   padding: 0;
 }
-.black {
-  color: #1B1C1D;
+.button {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.78571429em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  background: #DCDDDE;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.25em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
 }
-.grey {
-  color: #767676;
+.button:active {
+  background: #b2b3b4;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
 }
-.brown {
-  color: #A5673F;
+.button:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 5px 0 rgba(0, 0, 0, 0.15);
 }
-.pink {
-  color: #E03997;
+.button.tiny {
+  font-size: 0.85714286rem;
 }
-.purple {
-  color: #A333C8;
+.button.mini {
+  font-size: 0.71428571rem;
 }
-.violet {
-  color: #6435C9;
+.button.large {
+  font-size: 1.14285714rem;
 }
-.blue {
-  color: #2185D0;
+.button.small {
+  font-size: 0.92857143rem;
 }
-.teal {
-  color: #00B5AD;
-}
-.green {
-  color: #21BA45;
-}
-.olive {
-  color: #B5CC18;
-}
-.yellow {
-  color: #FBBD08;
-}
-.orange {
-  color: #F2711C;
-}
-.red {
-  color: #DB2828;
-}
-.white {
-  color: #ffffff;
-}
-.bg-black {
-  background-color: #1B1C1D;
-}
-.bg-grey {
-  background-color: #767676;
-}
-.bg-brown {
-  background-color: #A5673F;
-}
-.bg-pink {
-  background-color: #E03997;
-}
-.bg-purple {
-  background-color: #A333C8;
-}
-.bg-violet {
-  background-color: #6435C9;
-}
-.bg-blue {
-  background-color: #2185D0;
-}
-.bg-teal {
-  background-color: #00B5AD;
-}
-.bg-green {
-  background-color: #21BA45;
-}
-.bg-olive {
-  background-color: #B5CC18;
-}
-.bg-yellow {
-  background-color: #FBBD08;
-}
-.bg-orange {
-  background-color: #F2711C;
-}
-.bg-red {
-  background-color: #DB2828;
-}
-.bg-white {
-  background-color: #ffffff;
+.button.big {
+  font-style: 1.28571429rem;
 }

@@ -33,6 +33,19 @@
 @line-height-computed: floor((@font-size-base * @line-height-base)); // ~20px
 
 @commonMargin: 0.25em;
+
+@miniSize        : (10 / 14);
+@tinySize        : (12 / 14);
+@smallSize       : (13 / 14);
+@largeSize       : (16 / 14);
+@bigSize         : (18 / 14);
+
+@mini            : unit( round(@miniSize * @font-size-base) / @font-size-base, rem);
+@tiny            : unit( round(@tinySize * @font-size-base) / @font-size-base, rem);
+@small           : unit( round(@smallSize * @font-size-base) / @font-size-base, rem);
+@large           : unit( round(@largeSize * @font-size-base) / @font-size-base, rem);
+@big             : unit( round(@bigSize * @font-size-base) / @font-size-base, rem);
+
 //media divided
 // small , middle , large
 @screen-sm: 768px;
@@ -47,7 +60,7 @@
 @screen-sm-max: (@screen-md-min - 1);
 @screen-md-max: (@screen-lg-min - 1);
 //Grid Variables
-@grid-columns: 24;
+@grid-columns: 12;
 @grid-padding: 12px;
 
 //color define;

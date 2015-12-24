@@ -1,26 +1,52 @@
 @import "extra/header.less";
 
-.btn {
+.button {
   position: relative;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  margin: 0 @commonMargin 0 0;
   padding: @font-level-11 1.5em;
   text-transform: none;
   text-shadow: none;
   font-weight: 700;
   line-height: 1em;
+  background: @lightGrey;
   font-style: normal;
   text-align: center;
   text-decoration: none;
+  border-radius: @commonMargin;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
   .shadow(1);
 }
 
-.btn:hover {
+.button:active {
+  background: @lightGreyActive;
   .shadow(2);
 }
 
-.btn.tiny {
-  font-size: inherit;
+.button:hover {
+  .shadow(1.5);
 }
+
+.button.tiny {
+  font-size: @tiny;
+}
+
+.button.mini {
+  font-size: @mini;
+}
+
+.button.large {
+  font-size: @large;
+}
+
+.button.small {
+  font-size: @small;
+}
+
+.button.big {
+  font-style: @big;
+}
+

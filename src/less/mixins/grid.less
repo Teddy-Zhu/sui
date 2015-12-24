@@ -1,14 +1,142 @@
-.loop-grid-column(@index,@type,@grid-columns) when (@index > 0) {
-  .col-@{type}-@{index} {
-    width: percentage((@index / @grid-columns));
-    float: left;
+.make-grid-cell-common(@grid-cell-number) {
+  .grid .order.reverse[class*=cell-] {
+    order: -1;
   }
-  .calc-grid-column-offset(@index, @type, @grid-columns);
-  .loop-grid-column(@index - 1, @type, @grid-columns);
+  .loop-grid-cell-common(1, @grid-cell-number);
 }
 
-.calc-grid-column-offset(@index,@type,@grid-columns) {
-  .col-@{type}-offset-@{index} {
-    margin-left: percentage((@index / @grid-columns));
+.loop-grid-cell-common(@index,@grid-cell-number) when (@index <= @grid-cell-number) {
+
+  .grid .order-@{index}[class*=cell-] {
+    order: @index;
+  }
+  .loop-grid-cell-common(@index + 1, @grid-cell-number);
+}
+
+.make-grid-cell-no-media(@type,@grid-cell-number) {
+  .grid .cell-@{type} {
+    flex: auto;
+  }
+  .loop-grid-cell(1, @type, @grid-cell-number);
+}
+
+.make-grid-cell(@type,@grid-cell-number,@mediaValue) {
+  .grid .cell-@{type} {
+    flex: 0 0 100%;
+  }
+  .loop-grid-cell-auto(1, @type, @grid-cell-number);
+  @media (min-width: @mediaValue) {
+    .grid .cell-@{type} {
+      flex: auto;
+    }
+
+    .loop-grid-cell(1, @type, @grid-cell-number);
+  }
+}
+
+.loop-grid-cell(@index,@type,@grid-cell-number) when (@index <= @grid-cell-number) {
+  .grid .cell-@{type}-@{index} {
+    flex: 0 0 percentage((@index / @grid-cell-number));
+  }
+  .calcAddition(@type);
+  .calc-grid-cell-offset(@index, @type, @grid-cell-number);
+  .loop-grid-cell(@index + 1, @type, @grid-cell-number);
+}
+
+.loop-grid-cell-auto(@index,@type,@grid-cell-number) when (@index <= @grid-cell-number) {
+  .grid .cell-@{type}-@{index} {
+    flex: 0 0 100%;
+  }
+  .loop-grid-cell-auto(@index + 1, @type, @grid-cell-number);
+}
+
+.calc-grid-cell-offset(@index,@type,@grid-cell-number) {
+  .grid .cell-@{type}-offset-@{index} {
+    margin-left: percentage((@index / @grid-cell-number));
+  }
+}
+
+.calcAddition(@type) {
+  .end(@type);
+  .start(@type);
+  .between(@type);
+  .around(@type);
+  .center(@type);
+  .top(@type);
+  .middle(@type);
+  .bottom(@type);
+}
+
+.end(@type) {
+  .end-@{type} {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+  }
+}
+
+.start(@type) {
+  .start-@{type} {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    text-align: start;
+  }
+}
+
+.center(@type) {
+  .center-@{type} {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.top(@type) {
+  .top-@{type} {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+  }
+}
+
+.middle(@type) {
+  .middle-@{type} {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+}
+
+.bottom(@type) {
+  .bottom-@{type} {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    -webkit-box-align: end;
+    align-items: flex-end;
+  }
+}
+
+.around(@type) {
+  .around-@{type} {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+
+.between(@type) {
+  .between-@{type} {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
   }
 }

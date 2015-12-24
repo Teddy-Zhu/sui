@@ -63,3 +63,7 @@ gulp.task('buildLib', function () {
 gulp.task('deploy', function (done) {
     seQuence('clean', 'buildCSS', 'minCSS', 'buildLib', done);
 });
+
+gulp.task('watch', function() {
+    gulp.watch('src/**', ['deploy']);
+});

@@ -1,30 +1,32 @@
 @import "extra/header.less";
 
 .grid {
-  &:extend(.clearfix all);
-  padding-right: @grid-padding;
-  padding-left: @grid-padding;
-  margin-right: auto;
-  margin-left: auto;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.row {
-  width: 100%;
+.grid.reverse {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
 }
 
-.loop-grid-column(@grid-columns, xs, @grid-columns);
+.make-grid-cell-common(@grid-columns);
 
-@media (min-width: @screen-sm-min) {
-  .loop-grid-column(@grid-columns, sm, @grid-columns);
-}
+.make-grid-cell-no-media(xs, @grid-columns);
 
-@media (min-width: @screen-md-min) {
-  .loop-grid-column(@grid-columns, md, @grid-columns);
-}
+.make-grid-cell(sm, @grid-columns, @screen-sm-min);
 
-@media (min-width: @screen-lg-min) {
-  .loop-grid-column(@grid-columns, lg, @grid-columns);
-}
+.make-grid-cell(md, @grid-columns, @screen-md-min);
+
+.make-grid-cell(lg, @grid-columns, @screen-lg-min);
+
 
 
 
